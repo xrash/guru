@@ -13,6 +13,6 @@ go install github.com/xrash/guru/cmd/guru@latest
 Run:
 
 ```bash
-guru --prompt 'is there any bug in the code?' --model wizardcoder src/*
+guru --prompt 'is there any bug in the code?' --model wizardcoder src/**
 ```
 
