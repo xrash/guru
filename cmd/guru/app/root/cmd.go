@@ -10,6 +10,7 @@ type cliopts struct {
 	model  string
 	stdin  bool
 	prompt string
+	url    string
 }
 
 type rootCommand struct {
@@ -44,6 +45,14 @@ func CreateCmd() *cobra.Command {
 		"",
 		"",
 		"pass prompt through this option",
+	)
+
+	cmd.Flags().StringVarP(
+		&c.options.url,
+		"url",
+		"",
+		"http://localhost:11434/api/generate",
+		"url of ollama api",
 	)
 
 	cmd.Flags().StringVarP(

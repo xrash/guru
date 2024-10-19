@@ -18,9 +18,7 @@ type OllamaResponse struct {
 	Response string `json:"response"`
 }
 
-func ollama(prompt string, model string) (string, error) {
-	url := "http://localhost:11434/api/generate"
-
+func ollama(prompt, url, model string) (string, error) {
 	requestBody := OllamaRequest{
 		Model:  model,
 		Prompt: prompt,

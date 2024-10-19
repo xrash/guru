@@ -14,7 +14,7 @@ func run(opts cliopts, args []string) int {
 	}
 
 	if len(args) == 0 {
-		response, err := ollama(promptFromUser, opts.model)
+		response, err := ollama(promptFromUser, opts.url, opts.model)
 		if err != nil {
 			panic(err)
 		}
@@ -25,7 +25,7 @@ func run(opts cliopts, args []string) int {
 	promptFiles := buildInputFiles(args)
 	promptQuestion := "Given all files above, "
 	prompt := promptFiles + promptQuestion + promptFromUser
-	response, err := ollama(prompt, opts.model)
+	response, err := ollama(prompt, opts.url, opts.model)
 	if err != nil {
 		panic(err)
 	}
